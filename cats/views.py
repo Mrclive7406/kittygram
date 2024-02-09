@@ -1,13 +1,13 @@
-from rest_framework import generics
+from rest_framework import viewsets 
 
 from .models import Cat
 from .serializers import CatSerializer
 
 
-class CatList(generics.ListCreateAPIView):
+class CatViewSet(viewsets.ListCreateAPIView):
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
 
-class CatDetail(generics.RetrieveUpdateDestroyAPIView):
+class CatDetail(viewsets.RetrieveUpdateDestroyAPIView):
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
